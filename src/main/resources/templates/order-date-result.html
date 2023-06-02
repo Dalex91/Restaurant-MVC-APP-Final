@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Result</h1>
+<table>
+    <div>
+        <label for="fileType">File type: </label>
+        <select id="fileType" name="fileType">
+            <option value="CSV">CSV</option>
+            <option value="EXCEL">EXCEL</option>
+        </select>
+    </div>
+    <button type="submit">Export</button>
+    <tr>
+        <th>ID</th>
+        <th>Total</th>
+        <th>Order Date</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.total}"></td>
+        <td th:text="${order.orderDateTime}"></td>
+        <td th:text="${order.status}"></td>
+    </tr>
+</table>
+</body>
+</html>

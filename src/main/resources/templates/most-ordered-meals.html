@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Most Ordered Meals</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Most Ordered Meals</h1>
+<table>
+    <tr>
+        <th>Meal Name</th>
+    </tr>
+    <tr th:each="meal : ${meals}">
+        <td th:text="${meal.name}"></td>
+        <td th:text="${meal.price}"></td>
+        <td th:text="${meal.stock}"></td>
+    </tr>
+</table>
+</body>
+</html>

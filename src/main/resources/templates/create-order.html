@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Creare comandă</title>
+</head>
+<body>
+<h1>Create order</h1>
+<form th:action="@{/create-order}" method="post">
+    <div>
+        <label for="orderId">New order id:</label>
+        <input type="text" id="orderId" name="orderId" required>
+    </div>
+    <div>
+        <label for="products">IProducts name (separated by comma):</label>
+        <input type="text" id="products" name="products" required>
+    </div>
+    <div>
+        <button type="submit">Crete order</button>
+    </div>
+</form>
+</body>
+</html>

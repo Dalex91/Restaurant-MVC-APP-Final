@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage employee</title>
+</head>
+<body>
+     <h1>Add user</h1>
+     <form role="form" method="POST" th:action="@{/manage-users}" th:object="${user}">
+         <div>
+             <label for="username">Username: </label>
+             <input type="text" id="username" th:field="*{username}" required>
+         </div>
+         <div>
+             <label for="firstName"> First name: </label>
+             <input type="text" id="firstName" th:field="*{firstName}" required>
+         </div>
+         <div>
+             <label for="lastName">Last name: </label>
+             <input type="text" id="lastName" th:field="*{lastName}" required>
+         </div>
+         <div>
+             <label for="password">Password: </label>
+             <input type="password" id="password" th:field="*{password}" required>
+         </div>
+         <div>
+             <label for="userType">User type: </label>
+             <select id="userType" name="userType">
+                 <option value="ADMIN">ADMIN</option>
+                 <option value="EMPLOYEE">EMPLOYEE</option>
+             </select>
+         </div>
+         <button type="submit">Add user</button>
+     </form>
+     <form role="form" method="GET" th:action="@{/all-users}">
+         <button type="submit">See all users</button>
+     </form>
+</body>
+</html>

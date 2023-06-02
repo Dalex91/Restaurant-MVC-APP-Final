@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update status</h1>
+<form role="form" method="POST" th:action="@{/employee-page/update-status/{id}(id=${order.id})}" th:object="${order}">
+    <input type="hidden" th:field="*{id}" />
+    <div>
+        <label for="id">Id: </label>
+        <input type="text" id="id" th:field="*{name}" required>
+    </div>
+    <div>
+        <label for="userType">User type: </label>
+        <select id="userType" name="userType">
+            <option value="NEW">ADMIN</option>
+            <option value="IN_PROCESS">IN_PROCESS</option>
+            <option value="FINISHED">FINISHED</option>
+        </select>
+    </div>
+    <button type="submit">Update status</button>
+</form>
+</body>
+</html>

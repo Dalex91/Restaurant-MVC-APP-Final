@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <head>
+        <title>Dashboard</title>
+        <style>
+            .button-container {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            .button-container button {
+                margin: 10px;
+            }
+        </style>
+    </head>
+</head>
+<body>
+     <h1>Dashboard</h1>
+     <form th:action="@{/admin-page/manage-users}" method="GET" class="button-container">
+         <button type="submit"> Manage employees </button>
+     </form>
+     <form th:action="@{/admin-page/manage-products}" method="GET" class="button-container">
+         <button type="submit"> Manage products </button>
+     </form>
+     <form th:action="@{/admin-page/manage-orders}" method="GET" class="button-container">
+         <button type="submit"> Manage orders </button>
+     </form>
+</body>
+</html>

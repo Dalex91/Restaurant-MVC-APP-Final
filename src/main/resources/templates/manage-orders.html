@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Search</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        .datepicker {
+            width: 200px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+    </script>
+</head>
+<body>
+<h1>Order Search</h1>
+<form method="POST" th:action="@{/order-date-result}">
+    <div>
+        <label for="startDate">Start Date:</label>
+        <input type="text" id="startDate" name="startDate" class="datepicker" required>
+    </div>
+    <div>
+        <label for="endDate">End Date:</label>
+        <input type="text" id="endDate" name="endDate" class="datepicker" required>
+    </div>
+    <div>
+        <button type="submit">Search</button>
+    </div>
+</form>
+<form method="GET" th:action="@{/manage-orders/create-order}">
+    <button type="submit">Create order</button>
+</form>
+<form role="form" method="GET" th:action="@{manage-orders/most-ordered-meals}">
+    <button type="submit">See all users</button>
+</form>
+</body>
+</html>

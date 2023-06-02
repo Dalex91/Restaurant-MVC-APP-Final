@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <head>
+        <title>Dashboard</title>
+        <style>
+            .button-container {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            .button-container button {
+                margin: 10px;
+            }
+        </style>
+    </head>
+</head>
+<body>
+<h1>Dashboard</h1>
+<form th:action="@{/employee-page/create-order}" method="GET" class="button-container">
+    <button type="submit"> Add order </button>
+</form>
+<form th:action="@{/employee-page/update-status}" method="GET" class="button-container">
+    <button type="submit"> Change status </button>
+</form>
+</body>
+</html>

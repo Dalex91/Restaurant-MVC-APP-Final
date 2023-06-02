@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage meals</title>
+</head>
+<body>
+<h1>Add meal</h1>
+<form role="form" method="POST" th:action="@{/manage-products}" th:object="${meal}">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" th:field="*{name}" required>
+    </div>
+    <div>
+        <label for="price"> Price: </label>
+        <input type="text" id="price" th:field="*{price}" required>
+    </div>
+    <div>
+        <label for="stock"> Stock: </label>
+        <input type="text" id="stock" th:field="*{stock}" required>
+    </div>
+    <button type="submit">Add meal</button>
+</form>
+<form role="form" method="GET" th:action="@{/all-meals}">
+    <button type="submit">See all meals</button>
+</form>
+<form role="form" method="GET" th:action="@{/update-meal}">
+    <button type="submit">Update meal</button>
+</form>
+</body>
+</html>
